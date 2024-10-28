@@ -1,32 +1,47 @@
-from functools import total_ordering
 from __future__ import annotations
+from functools import total_ordering
+
 
 @total_ordering
 class Animal():
-    pass
-    def __init__(self, name, age):
-        pass
-    def __repr__(self):
-        pass
-    def __str__(self):
-        pass
-    def __eq__(self, other):
-        pass
-    def __lt__(self, other):
-        pass
+
+    faj: str
+    __kor: float
+    _suly: float
+
+    def __init__(self, faj: str,suly: float, kor: float=0.0):
+        self.faj = faj
+        self._suly = suly
+        self.__kor = kor
+    def __repr__(self) -> str:
+        return f"{self.faj}, {self.__kor}, {self._suly}"
+    def __str__(self) -> str:
+        return f"{self.faj}: {self.__kor} év, {self._suly} kg"
+    def __eq__(self, other) -> bool:
+        return isinstance(other, Animal) and \
+            (self.faj, self._suly, self.__kor) == (other.faj, other._suly, other.__kor)
+    def __lt__(self, other) -> bool:
+        return isinstance(other, Animal) and \
+            (self.faj, -self.__kor, self._suly) < (other.faj, -other.__kor, other._suly)
     @staticmethod
-    def metodus(self):
-        pass
-class Mammals(Animal):
-    def __init__(self, name, age):
-        super().__init__(name, age)
-        @property
-        def tulajdonsag(self):
-            pass
-        @tulajdonsag.setter
-        def tulajdonsag(self, value):
-            pass
-        def __repr__(self):
-            super().__repr__()
-        def __str__(self):
-            super().__str__()
+    def eletkorok(allatok: list[Animal], fajnev: str) -> list:
+        retlist = []
+        for allat in allatok:
+            if allat.faj == fajnev and allat.kor not in retlist:
+                retlist.append(allat.kor)
+        return retlist
+class Mammal(Animal):
+    __labak: int
+    def __init__(self, labak: int, faj: str, suly: float, kor: float = 0.0,):
+        super().__init__(faj, suly, kor)
+        self.__labak = labak
+    @property
+    def labak(self) -> int:
+        return self.__labak
+    @labak.setter
+    def labak(self, value) -> None:
+        self.__labak = value
+    def __repr__(self):
+        return f"{super().__repr__()}, {self.__labak}"
+    def __str__(self):
+        return f"{super().__str__()} (lábak száma: {self.__labak})"
