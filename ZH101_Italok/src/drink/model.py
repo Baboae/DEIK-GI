@@ -44,7 +44,7 @@ class Drink():
     #region Statikus metódusok - 8. - 16. feladat
     #region 8. feladat
     @staticmethod
-    def kiszerelesek(drinks: list(Drink), name: str) -> list:
+    def kiszerelesek(drinks: list[Drink], name: str) -> list:
         filtered = []
         for drink in drinks:
             if drink.nev == name and drink.kiszereles not in filtered:
@@ -53,7 +53,7 @@ class Drink():
     #endregion
     # region 9. feladat
     @staticmethod
-    def hany_kulonbozo_kiszereles(drinks: list(Drink)) -> int:
+    def kulonbozo_kiszerelesek(drinks: list[Drink]) -> int:
         lst = []
         for drink in drinks:
             if drink.kiszereles not in lst:
@@ -62,7 +62,7 @@ class Drink():
     # endregion
     #region 10. feladat
     @staticmethod
-    def hany_dragabb_mint(drinks: list(Drink), price: int) -> int:
+    def dragabbak_szama(drinks: list[Drink], price: int) -> int:
         lst = []
         for drink in drinks:
             if drink.ar > price:
@@ -71,7 +71,7 @@ class Drink():
     #endregion
     # region 11. feladat
     @staticmethod
-    def hany_kiszereles_ami_dragabb_mint(drinks: list(Drink), price: int) -> int:
+    def dragabb_kiszerelesek_szama(drinks: list[Drink], price: int) -> int:
         lst = []
         for drink in drinks:
             if drink.ar > price and drink.kiszereles not in lst:
@@ -80,16 +80,53 @@ class Drink():
     # endregion
     # region 12. feladat
     @staticmethod
-    def metodus() ->None:
-        pass
+    def italok_szama_kiszerles_szerint(drinks: list[Drink], servings:set[str]) ->int:
+        counter = 0
+        for drink in drinks:
+            if drink.kiszereles in servings:
+                counter += 1
+        return counter
     # endregion
     # region 13. feladat
+    @staticmethod
+    def kiszerelesek_darabszam(drinks: list[Drink]) -> dict:
+        kdb: dict[str, int] = {}
+        for drink in drinks:
+            if drink.kiszereles not in kdb:
+                kdb[drink.kiszereles] = 1
+            kdb[drink.kiszereles] += 1
+        return kdb
     # endregion
     # region 14. feladat
+    @staticmethod
+    def kiszerelesek_italok(drink: list[Drink]) -> dict:
+        ki: dict[str, set[str]] = {}
+        for drink in drink:
+            if drink.kiszereles not in ki:
+                ki[drink.kiszereles] = set()
+            ki[drink.kiszereles].add(drink.nev)
+        return ki
     # endregion
     # region 15. feladat
+    @staticmethod
+    def atlagnal_dragabb_italok(drinks: list[Drink]) -> set[str]:
+        dragabb: set[str] = set()
+        osszes = 0
+        for drink in drinks:
+            osszes+=drink.ar
+        atlag_ar = osszes/len(drinks)
+        for drink in drinks:
+            if drink.ar > atlag_ar:
+                dragabb.add(drink.nev)
+        return dragabb
     # endregion
     # region 16. feladat
+    @staticmethod
+    def atlagnal_dragabbak_listaja(drinks: list[Drink]) -> list[Drink]:
+        osszes = sum(drink.ar for drink in drinks)
+        atlag = osszes/len(drinks)
+        # A list comprehension meg uj dolog nekem szoval handle with care, nem fix h mukodik.
+        return [drink for drink in drinks if drink.ar > atlag]
     # endregion
     #endregion
 #endregion
