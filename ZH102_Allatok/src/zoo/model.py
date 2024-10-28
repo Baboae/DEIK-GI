@@ -23,6 +23,15 @@ class Animal():
     def __lt__(self, other) -> bool:
         return isinstance(other, Animal) and \
             (self.faj, -self.__kor, self._suly) < (other.faj, -other.__kor, other._suly)
+    @property
+    def suly(self) -> float:
+        return self._suly
+    @property
+    def kor(self) -> float:
+        return self.__kor
+    @kor.setter
+    def kor(self, kor: float):
+        self.__kor = kor
     @staticmethod
     def eletkorok(allatok: list[Animal], fajnev: str) -> list:
         retlist = []

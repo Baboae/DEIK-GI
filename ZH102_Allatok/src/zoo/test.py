@@ -20,8 +20,7 @@ def main():
         if len(a) == 4:
             labak = int(a[3])
             allatok.append(Mammal(labak, faj, suly, kor))
-    allatok.sort(key = lambda a: (a.faj)) ## itt meg az output szerint kor szerint \
-    # csokkeno sorrendbe kene rendezni, csak az privat, es nemtudom h kene xddf
+    allatok.sort(key = lambda a: (a.faj, -a.kor))
     for a in allatok:
         print(a)
 if __name__ == '__main__':
