@@ -1,5 +1,4 @@
-from __future__ import annotations # Ez szükséges ahhoz, hogy tudjunk hivatkozni \
-# a Drink osztályra, egy metódus paraméter mezőjén belül.
+from __future__ import annotations
 from functools import total_ordering
 
 @total_ordering

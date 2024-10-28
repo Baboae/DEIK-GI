@@ -1,8 +1,8 @@
 import sys
 from math import trunc
 
+from drink.model import Drink
 from drink.model import Alcohol
-from model import Drink
 def main() -> None:
     list_drinks = []
 
