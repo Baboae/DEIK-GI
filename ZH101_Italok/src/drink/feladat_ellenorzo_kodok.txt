@@ -1,6 +1,15 @@
 Ezekkel a kódokkal tudod a main függvényedben ellenőrizni,
 hogy a 8. - 16. feladat megoldásai tényleg működnek-e.
 
+A bemenet az összes feladatnál:
+
+Vodka;2 dl;2500;37.5
+Vodka;5 dl;3700;41.0
+Kékfrankos;0.75 l;1500;11.5
+Víz;1.5 l;110
+Unicum;5 dl;3700;40.0
+Narancslé;1 l;500
+
 8. Feladat:
 print(Drink.kiszerelesek(list_drinks, "Vodka"))
 

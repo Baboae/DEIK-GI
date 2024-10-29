@@ -126,7 +126,6 @@ class Drink():
     def atlagnal_dragabbak_listaja(drinks: list[Drink]) -> list[Drink]:
         osszes = sum(drink.ar for drink in drinks)
         atlag = osszes/len(drinks)
-        # A list comprehension meg uj dolog nekem szoval handle with care, nem fix h mukodik.
         return [drink for drink in drinks if drink.ar > atlag]
     # endregion
     #endregion
