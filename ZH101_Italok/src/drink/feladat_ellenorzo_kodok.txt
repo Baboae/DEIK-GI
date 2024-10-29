@@ -1,0 +1,55 @@
+Ezekkel a kódokkal tudod a main függvényedben ellenőrizni,
+hogy a 8. - 16. feladat megoldásai tényleg működnek-e.
+
+8. Feladat:
+print(Drink.kiszerelesek(list_drinks, "Vodka"))
+
+A helyes eredmény ['5 dl', '2 dl'].
+
+9. Feladat:
+print(Drink.kulonbozo_kiszerelesek(list_drinks, "Vodka"))
+
+A helyes eredmény 5.
+
+10. Feladat:
+print(Drink.dragabbak_szama(list_drinks, 1500))
+
+A helyes eredmény 2.
+
+11. Feladat:
+print(Drink.dragabb_kiszerelesek_szama(list_drinks, 500))
+
+A helyes eredmény 3.
+
+12. Feladat:
+kiszerles_set = {"0.2 l","0.5 l", "7.5 dl","1 l", "1.5 l"}
+print(Drink.italok_szama_kiszerles_szerint(list_drinks, kiszerles_set))
+
+A helyes eredmény 2.
+
+13. Feladat:
+print(Drink.kiszerelesek_darabszam(list_drinks))
+
+A helyes eredmény {'5 dl': 2, '2 dl': 1, '0.75 l': 1, '1 l': 1, '1.5 l': 1}.
+
+14. Feladat:
+print(Drink.kiszerelesek_italok(list_drinks))
+
+A helyes eredmény
+{'5 dl': {'Vodka', 'Unicum'}, '2 dl': {'Vodka'}, '0.75 l': {'Kékfrankos'}, '1 l': {'Narancslé'}, '1.5 l': {'Víz'}}.
+
+15. Feladat:
+print(Drink.atlagnal_dragabb_italok(list_drinks))
+
+A helyes eredmény {'Unicum', 'Vodka'}.
+
+16. Feladat:
+atlagnal_dragabbak = Drink.atlagnal_dragabbak_listaja(list_drinks)
+for elem in atlagnal_dragabbak:
+    print(elem)
+
+A helyes eredmény
+
+40.0% alkoholtartalmú Unicum, 5 dl, 3700 Ft
+41.0% alkoholtartalmú Vodka, 5 dl, 3700 Ft
+37.5% alkoholtartalmú Vodka, 2 dl, 2500 Ft

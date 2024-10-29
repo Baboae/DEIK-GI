@@ -24,7 +24,8 @@ def main() -> None:
             alc = float(d[3])
             list_drinks.append(Alcohol(name, price, serving, alc))
     list_drinks.sort(key=lambda x: (-x.ar, x.kiszereles, x.nev))
-    for d in list_drinks:
-        print(d)
+    atlagnal_dragabbak = Drink.atlagnal_dragabbak_listaja(list_drinks)
+    for elem in atlagnal_dragabbak:
+        print(elem)
 if __name__ == '__main__':
     main()

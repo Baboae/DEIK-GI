@@ -94,7 +94,8 @@ class Drink():
         for drink in drinks:
             if drink.kiszereles not in kdb:
                 kdb[drink.kiszereles] = 1
-            kdb[drink.kiszereles] += 1
+            else:
+                kdb[drink.kiszereles] += 1
         return kdb
     # endregion
     # region 14. feladat
