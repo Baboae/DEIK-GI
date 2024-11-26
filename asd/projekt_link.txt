@@ -1,1 +1,5 @@
 https://bitbucket.org/gi-prog2/test-2-2024
+
+>klónozás után miniconda interpreter, aztán a projekten belül futtasd le az initialize.py modult, futtatás után másold be ezt:
+88e0078a-a3a0-4577-8d74-9e6991c07ac5
+>majd enter
