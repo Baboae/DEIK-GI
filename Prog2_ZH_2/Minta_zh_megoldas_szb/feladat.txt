@@ -1,0 +1,38 @@
+Feladatok
+A model modul befejezése
+Fejezd be a model modulban elkezdett három osztály implementációját a következők szerint (példákat a data mappában található JSON dokumentumban találsz):
+
+1. Az Aircraft osztály egy adatosztály, mely a következő attribútumokkal rendelkezik:
+
+	1. number: a típus azonosítója, sztring, egyedi kulcs
+	2. year: a típus bemutatásának az éve, egész
+	3. manufacturer: a típus gyártója, a Manufacturer Enum-osztály egy konstansa, alapértelmezett értéke az AIRBUS konstans
+	4.configurations: a típus konfigurációit tartalmazó, Configuration típusú lista, alapértelmezett értéke egy üres lista
+Az osztály __eq__() és __hash__() metódusai csak az egyedi kulccsal dolgoznak. A __repr__() metódus által visszaadott sztring a configurations attribútumot nem tartalmazza.
+
+2. A Configuration osztály egy adatosztály, mely a következő attribútumokkal rendelkezik:
+
+	1. code: a konfiguráció azonosítója, sztring, egyedi kulcs
+	2. economy: az economy osztályú ülések száma, egész
+	3. business: a business osztályú ülések száma, egész
+Az osztály __eq__() és __hash__() metódusai csak az egyedi kulccsal dolgoznak.
+
+3. A Manufacturer Enum-osztály a készletek témáit definiálja a következő konstansokkal:
+
+	Konstans	Érték
+	AIRBUS		"Airbus"
+	BOEING		"Boeing"
+	EMBRAER		"Embraer"
+
+A solution modul elkészítése
+Definiálj egy Solution nevű osztályt a solution modulban, mely a Repository és a Queries osztályokat egyaránt kiterjeszti.
+
+1. Implementáld a Repository osztályból örökölt type_mapper() statikus metódust. A metódus törzse vizsgálja meg azt, hogy az aktuális objektumot leíró szótár milyen kulcsokkal rendelkezik. Ettől függően adja vissza valamelyik osztályod egy példányát.
+
+2. Írd felül a Repository osztályból örökölt entities tulajdonságot.
+
+	1. Lásd el a metódust olyan típusparaméterezéssel, mely megfelel a JSON dokumentum tartalmának.
+	2. Add vissza a Repository osztály entities tulajdonságának értékét úgy, hogy a megfelelő típuskényszerítést alkalmazod.
+3. Implementáld a lekérdezéseket tartalmazó osztályod metódusait. Az interpretálhatóságot biztosítandó, első lépésként generálj le minden metódust. Ha valamelyiket nem tudnád implementálni, akkor egy pass kulcsszó kerüljön a törzsébe. A metódusok iteratívan és egyetlen utasításban, comprehension-ökkel egyaránt megoldhatók, de utóbbi esetben több pontot ér egy megoldás.
+
+4. Vegyél fel ebben a modulban egy belépési pontot és egy main() metódust. A metódusban hívd meg mindegyik lekérdező metódust, majd írasd ki tetszőleges, de könnyen érthető formában a visszakapott értékeket.

@@ -1,0 +1,65 @@
+[
+  {
+    "number": "A320",
+    "year": 1987,
+    "manufacturer": "Airbus",
+    "configurations": [
+      {
+        "code": "CY180",
+        "economy": 180,
+        "business": 0
+      },
+      {
+        "code": "CY168",
+        "economy": 168,
+        "business": 0
+      }
+    ]
+  },
+  {
+    "number": "A220-100",
+    "year": 2013,
+    "manufacturer": "Airbus",
+    "configurations": [
+      {
+        "code": "CY125",
+        "economy": 125,
+        "business": 0
+      },
+      {
+        "code": "Y168",
+        "economy": 168,
+        "business": 0
+      }
+    ]
+  },
+  {
+    "number": "E190-E2",
+    "year": 2016,
+    "manufacturer": "Embraer",
+    "configurations": [
+      {
+        "code": "Y110",
+        "economy": 180,
+        "business": 0
+      }
+    ]
+  },
+  {
+    "number": "B747-400",
+    "year": 1988,
+    "manufacturer": "Boeing",
+    "configurations": [
+      {
+        "code": "C35W36Y337",
+        "economy": 337,
+        "business": 35
+      },
+      {
+        "code": "F14C64Y298",
+        "economy": 298,
+        "business": 64
+      }
+    ]
+  }
+]
